@@ -72,6 +72,21 @@ git
         git push -u origin main 将代码上传到服务器上
 
     将本地库上传gitee:
-        git remote add origin https://gitee.com/tutoudewogua/git-demo.git
+        git remote add gitee https://gitee.com/tutoudewogua/git-demo.git
         
-        git push -u origin master
+        git push -u gitee master
+
+远程库的操作命令
+    git remote 列出当前关联的远程库
+    git remote add <remote name> <url> 关联远程仓库
+    git remote remove <remote name> 删除远程库
+    git push -u <remote name> <分支名> 向远程仓库推送代码, 并和当前分支关联
+    git push <remote name> <本地分支>:<远程分支>
+    git clone <url> 从远程库下载代码
+
+    git push 如果本地库的版本低于远程库, push默认是推不上去的
+    git fetch 要想推送成功, 必须先确保本地库和远程库的版本一致, fetch它会从远程库下载所有代码, 但是它不会将代码和当前分支自动合并
+              使用fetch拉取代码后, 必须要手动对代码进行合并
+    git pull 从服务器上拉取代码并自动合并
+
+    注意: 推送代码之前, 一定要从远程库中拉取最新的代码
