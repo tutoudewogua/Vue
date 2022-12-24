@@ -90,3 +90,51 @@ git
     git pull 从服务器上拉取代码并自动合并
 
     注意: 推送代码之前, 一定要从远程库中拉取最新的代码
+
+tag标签
+    当头指针没有指向某个分支的头部时, 这种状态我们称为分离头指针(HEAD detached), 分离头指针的状态下也可以操作代码, 但是这些操作不会出现
+在任何分支上, 所以注意不要在分离头指针的状态下来操作仓库。
+    如果非得要回到后边的节点对代码进行操作, 则可以选择创建分支后再操作。
+    git switch -c <分支名> <提交id>
+    可以为提交记录设置标签, 设置标签以后可以通过标签快速识别出不同的开发节点
+    git tag
+    git tag 版本
+    git tag 版本 提交id
+    git push 远程仓库 标签名
+    git push 远程仓库 --tags
+    git tag -d 标签名 删除标签
+    git push <remote name> --delete 标签名 删除远程标签
+
+gitignore
+    默认情况下, git会监视项目中的所有内容, 但是有些内容比如node_modules目录中的内容, 我们不希望它被git所管理, 我们可以在项目目录中添加
+一个.gitignore文件, 来设置那些需要git忽略的文件。
+
+github的静态页面
+    在github中, 可以将自己的静态页面之间部署到github中, 它会给我们提供一个地址使得我们的页面变成一个真正的网站, 可以供用户访问。
+    要求:
+        静态页面的分支必须叫做: gh-pages
+        如果希望页面可以通过xxx.github.io访问则需要将库的名字配置为xxx.github.io
+
+docusaurus
+    Facebook推出的开源的静态内容管理系统, 通过它可以快速的部署一个静态网站
+    使用:
+        网址:
+            https://www.docusaurus.cn/
+        安装
+            npx create-docusaurus@latest my-website classic
+        启动项目
+            npm start或yarn start
+        构建项目
+            npm run build或yarn build
+        上传代码
+            npm run deploy或yarn deploy
+            上传代码时, 两个注意事项:
+                1.使用deploymentBranch来指定分支
+                2.配置一个环境变量: 
+                    GIT_USER: github的用户名
+        配置项目:
+            docusaurus.config.js 项目的配置文件
+        添加页面:
+            在docusaurus框架中, 页面分成三种: 1.page, 2.blog, 3.doc        
+        
+
