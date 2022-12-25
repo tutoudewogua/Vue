@@ -64,7 +64,7 @@ git
 不同点在于远程的仓库可以被多人同时访问使用, 方便我们协同开发。在实际工作中, git服务器通常由公司搭建内部使用或是购买一些公共的私有git服务器。
 我们学习阶段, 直接使用一些开放的公共git仓库。目前我们常用的库有两个: GitHub和Gitee(码云)
     将本地库上传git:
-        git remote add <remote name> <url> 
+        git remote add <remote name> <url> 本地库关联远程库
         git remote add origin https://github.com/tutoudewogua/git-demo.git
 
         git branch -M main 修改分支的名字为main
@@ -72,16 +72,16 @@ git
         git push -u origin main 将代码上传到服务器上
 
     将本地库上传gitee:
-        git remote add gitee https://gitee.com/tutoudewogua/git-demo.git
+        git remote add gitee https://gitee.com/tutoudewogua/git-demo.git 本地库关联远程库
         
-        git push -u gitee master
+        git push -u gitee master 将本地库中的代码上传到远程库
 
 远程库的操作命令
     git remote 列出当前关联的远程库
     git remote add <remote name> <url> 关联远程仓库
     git remote remove <remote name> 删除远程库
     git push -u <remote name> <分支名> 向远程仓库推送代码, 并和当前分支关联
-    git push <remote name> <本地分支>:<远程分支>
+    git push <remote name> <本地分支>:<远程分支> 将本地分支的代码推送到远程分支中
     git clone <url> 从远程库下载代码
 
     git push 如果本地库的版本低于远程库, push默认是推不上去的
@@ -97,17 +97,18 @@ tag标签
     如果非得要回到后边的节点对代码进行操作, 则可以选择创建分支后再操作。
     git switch -c <分支名> <提交id>
     可以为提交记录设置标签, 设置标签以后可以通过标签快速识别出不同的开发节点
-    git tag
-    git tag 版本
-    git tag 版本 提交id
-    git push 远程仓库 标签名
-    git push 远程仓库 --tags
-    git tag -d 标签名 删除标签
-    git push <remote name> --delete 标签名 删除远程标签
+    git tag 列出所有的标签
+    git tag <版本> 为最后一次提交节点设置标签
+    git tag <版本> <提交id> 为某一次提交节点设置标签
+    git push <remote name> <标签名> 把标签名对应的提交节点的代码推送到远程库中
+    git push <remote name> --tags 把所有设置了标签的提交节点的代码推送到远程库中 
+    git tag -d <标签名> 删除本地标签
+    git push <remote name> --delete <标签名> 删除远程标签
 
 gitignore
     默认情况下, git会监视项目中的所有内容, 但是有些内容比如node_modules目录中的内容, 我们不希望它被git所管理, 我们可以在项目目录中添加
 一个.gitignore文件, 来设置那些需要git忽略的文件。
+    .gitigmore文件中一行代表一个文件
 
 github的静态页面
     在github中, 可以将自己的静态页面之间部署到github中, 它会给我们提供一个地址使得我们的页面变成一个真正的网站, 可以供用户访问。
