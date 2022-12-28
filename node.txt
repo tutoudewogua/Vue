@@ -21,3 +21,6 @@ HelloWorld
         const app = createApp(App);
         // 挂载到页面
         app.mount("#root");
+    4.自动创建项目
+        npm init vue@latest
+        yarn create vue
