@@ -1,0 +1,21 @@
+{
+  "name": "01_helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview"
+    
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^4.0.3"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  }
+}
