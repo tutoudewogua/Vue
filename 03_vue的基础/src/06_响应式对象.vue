@@ -1,7 +1,7 @@
 <script setup>
 // 引入reactive方法
 import { reactive, ref } from 'vue';
-import { $ref } from "vue/macros";
+// import { $ref } from "vue/macros";
 
 /* 
     reactive()
@@ -12,7 +12,7 @@ import { $ref } from "vue/macros";
             - 只能返回对象的响应式代理, 不能处理原始值
 
     ref()
-        - 接收一个任意, 并返回它的响应式代理
+        - 接收一个任意值, 并返回它的响应式代理
 */
 const stu = reactive({
     name: "孙悟空"
